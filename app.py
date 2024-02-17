@@ -13,6 +13,7 @@ def k1(a):
 	t=a+".html"
 	return render_template(t)
 
+
 @app.route("/submit",methods=["POST"])
 def k2():
 	k="\n\nEmail: "+request.form["email"]+"\nName: "+request.form["name"]+"\nPhone number: "+request.form["phone"]+"\nMessage: "+request.form["message"]
