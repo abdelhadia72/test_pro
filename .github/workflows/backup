@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.x
-
+      
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
@@ -53,19 +53,9 @@ jobs:
 
       - name: Build backend
         run: |
-          # Add backend build steps here
 
       - name: Deploy
         run: |
-          # Add deployment steps here
-
-      - name: Add comment for successful merge
-        if: ${{ success() }}
-        uses: peter-evans/create-or-update-comment@v4
-        with:
-          issue-number: ${{ github.event.issue.number }}
-          body: |
-            :white_check_mark: Automatic merge from dev to main completed successfully!
 
   merge:
     runs-on: ubuntu-latest
@@ -79,5 +69,4 @@ jobs:
           source_branch: dev
           destination_branch: main
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          merge_method: squash
 
